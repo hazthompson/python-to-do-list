@@ -1,8 +1,23 @@
+import unittest
 from selenium import webdriver
 
-browser = webdriver.Firefox()
 
-# navit
-browser.get('http://localhost:8080')
+class NewVisitorTest(unittest.TestCase):
 
-assert 'Django' in browser.title
+    def setUp(self):
+        self.browser = webdriver.Firefox()
+
+    def tearDown(self):
+        self.browser.quit()
+
+    def test_starting_a_new_todo_list(self):
+
+        # navigate to brower
+        self.browser.get('http://localhost:8080')
+
+        # check the title includes browser
+        self.assertIn('To-Do list', self.browser.title)
+
+
+if __name__ == '__main__':
+    unittest.main()
