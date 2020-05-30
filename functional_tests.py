@@ -16,7 +16,7 @@ class NewVisitorTest(unittest.TestCase):
         self.browser.get('http://localhost:8080')
 
         # check the title includes browser
-        self.assertIn('To-Do list', self.browser.title)
+        self.assertIn('To-Do Lists', self.browser.title)
 
 
 if __name__ == '__main__':
